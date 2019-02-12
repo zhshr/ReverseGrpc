@@ -1,5 +1,11 @@
 syntax = "proto3";
 
+option java_package = "us.acgn.testservice";
+
+service TestService {
+    rpc abc(Sample) returns (Sample) {}
+}
+
 message Sample {
 
 }
