@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "us.acgn.reversegrpc";
+
+// This service is being dialed by the server of the underlying service.
+service ReverseGrpcWrapperService {
+  rpc abc(stream UnderlyingResponse) returns (stream UnderlyingRequest) {}
+}
+
+// The request of the underlying service. In wrapper it is the response
+message UnderlyingRequest {
+  int64 seq_id = 1;
+
+}
+
+// The response of the underlying service. In wrapper it is the request
+message UnderlyingResponse {
+
+}
